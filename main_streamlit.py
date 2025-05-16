@@ -39,7 +39,7 @@ if st.session_state.movie:
 
 # Bouton pour générer un résumé (activé uniquement si un film est chargé)
 if st.session_state.movie:
-    if st.button("🧠 Get Summary"):
+    if st.button(" Get Summary"):
         try:
             movie_id = st.session_state.movie["id"]
             payload = {"movie_id": movie_id}
@@ -51,7 +51,7 @@ if st.session_state.movie:
             st.session_state.summary = summary_data["summary_text"]
 
         except requests.RequestException as e:
-            st.error(f"❌ Erreur lors de la génération du résumé : {e}")
+            st.error(f" Erreur lors de la génération du résumé : {e}")
             st.session_state.summary = None
 
 # Affichage du résumé si présent
